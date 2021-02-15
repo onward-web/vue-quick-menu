@@ -1,14 +1,6 @@
 <template>
   <div class="quick-menu" ref="quickMenu" :style="quickMenuStyle">
-    <div v-for="(n, key) in menuCount" :key="key" class="sub-menu" :style="getSubMenu(n-1)">
-      <router-link v-if="menuUrlList[n-1].isLink" :to="menuUrlList[n-1].url" :target="openNewTab" :style="subMenuStyle" @mouseover.stop="mouseEnterSubMenu" @mouseout.stop="mouseOutSubMenu" :class="linkIconClass[n-1]">
-        <svg-icon :name="iconName[n-1]" />
-      </router-link>
-      <a v-else :style="subMenuStyle" @mouseover.stop="mouseEnterSubMenu" @mouseout.stop="mouseOutSubMenu" @click="processCallback(key)" :class="linkIconClass[n-1]">
-        <svg-icon :name="iconName[n-1]" />
-      </a>
 
-    </div>
 
     <div class='menu' :style="menuStyle">
       <div class='core-menu' @click="toggleMenu">
